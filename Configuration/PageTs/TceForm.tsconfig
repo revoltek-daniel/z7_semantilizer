@@ -5,5 +5,9 @@ TCEFORM.tt_content.header_layout.label = LLL:EXT:z7_semantilizer/Resources/Priva
 tx_semantilizer {
   disableOnPages = 0
   ignoreCTypes := addToList(div,html)
+
+  colPosOrdering {
+    # backend layout identifier = comma separated list with colPos ids
+  }
 }
 
