@@ -103,7 +103,7 @@ class CollectContentUtility
                     return $queryBuilder->createNamedParameter($value, \PDO::PARAM_STR);
                 }, $this->tsConfig['ignoreCTypes'] ? GeneralUtility::trimExplode(',', $this->tsConfig['ignoreCTypes']) : ['__']))
             )
-            ->add('orderBy', 'FIELD(colPos,' . $queryBuilder->createNamedParameter(implode(',', $colPosOrdering), \PDO::PARAM_STR) . ')')
+            ->add('orderBy', 'FIELD(colPos,' . $queryBuilder->createNamedParameter( $colPosOrdering, Connection::PARAM_INT_ARRAY) . ')')
             ->addOrderBy('sorting')
             ->execute()
             ->fetchAll() ?: [];
